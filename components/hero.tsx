@@ -84,7 +84,7 @@ export function Hero() {
             className="flex items-center gap-6 pt-4"
           >
             <a
-              href="https://github.com"
+              href="https://github.com/joaopconstant"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -93,7 +93,7 @@ export function Hero() {
               <Github size={22} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/joaopconstant/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -102,7 +102,7 @@ export function Hero() {
               <Linkedin size={22} />
             </a>
             <a
-              href="mailto:contato@joaopedro.dev"
+              href="mailto:joaoconstantdev@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Email"
             >
