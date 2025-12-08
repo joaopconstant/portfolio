@@ -5,12 +5,12 @@ import { FadeInUp, StaggerContainer, StaggerItem } from "@/components/motion";
 
 const projects = [
   {
-    title: "Sistema de Gestão Empresarial",
+    title: "Spendash",
     description:
-      "Plataforma completa para gerenciamento de processos internos, controle de estoque e relatórios automatizados.",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Node.js"],
-    image: "/maquininhas-avizz.png",
-    link: "https://avizz.com.br",
+      "Sistema de gestão de gastos pessoais, com controle de gastos e receitas, e relatórios de gastos.",
+    tags: ["Next.js", "Tailwind", "Vercel"],
+    image: "/spendash-app.png",
+    link: "https://spendash-omega.vercel.app",
     github: null,
   },
   {
@@ -23,12 +23,12 @@ const projects = [
     github: null,
   },
   {
-    title: "Landing Page SaaS",
+    title: "Sistema de Gestão Empresarial",
     description:
-      "Página de alta conversão para produto digital, com animações e otimização para SEO.",
-    tags: ["Next.js", "Tailwind", "Vercel"],
-    image: "/saas-landing-page-dark-modern.jpg",
-    link: "#",
+      "Plataforma  para gerenciamento de processos internos, controle de estoque e relatórios para a empresa Avizz.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Node.js"],
+    image: "/maquininhas-avizz.png",
+    link: "https://avizz.com.br",
     github: null,
   },
 ];
