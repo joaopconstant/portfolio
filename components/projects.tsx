@@ -9,14 +9,18 @@ const projects = [
     description:
       "Plataforma completa para gerenciamento de processos internos, controle de estoque e relatórios automatizados.",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Node.js"],
-    image: "/enterprise-management-dashboard-dark-theme.jpg",
+    image: "/maquininhas-avizz.png",
+    link: "https://avizz.com.br",
+    github: null,
   },
   {
-    title: "Site Institucional - MRX Rodas e Rodízios",
+    title: "MRX Rodas e Rodízios",
     description:
       "Site institucional para a empresa MRX Rodas e Rodízios, com informações sobre a empresa, produtos e serviços.",
     tags: ["Vite", "Tailwind", "Vercel"],
-    image: "/modern-ecommerce-dark.png",
+    image: "/mrx-website.png",
+    link: "https://mrxrodaserodizios.com.br",
+    github: null,
   },
   {
     title: "Landing Page SaaS",
@@ -24,6 +28,8 @@ const projects = [
       "Página de alta conversão para produto digital, com animações e otimização para SEO.",
     tags: ["Next.js", "Tailwind", "Vercel"],
     image: "/saas-landing-page-dark-modern.jpg",
+    link: "#",
+    github: null,
   },
 ];
 
@@ -35,7 +41,7 @@ export function Projects() {
         <FadeInUp className="max-w-2xl mb-16">
           <p className="text-primary text-sm tracking-wider mb-4">Projetos</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 text-balance">
-            Trabalhos selecionados que demonstram minha expertise
+            Projetos que desenvolvi recentemente
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
             Cada projeto é uma oportunidade de resolver problemas reais e
@@ -82,19 +88,21 @@ export function Projects() {
                   {/* Links */}
                   <div className="flex items-center gap-4 pt-2">
                     <a
-                      href="#"
+                      href={project.link}
                       className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-sm"
                     >
                       <ExternalLink size={16} />
                       Demo
                     </a>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-sm"
-                    >
-                      <Github size={16} />
-                      Código
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 text-sm"
+                      >
+                        <Github size={16} />
+                        GitHub
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>

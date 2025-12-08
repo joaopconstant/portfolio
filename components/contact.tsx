@@ -8,15 +8,42 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Mail, Linkedin, Github, CheckCircle } from "lucide-react";
 import { FadeInUp, ScaleIn, motion } from "@/components/motion";
+import { sendEmail } from "@/lib/resend";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    // Reset after 3 seconds
-    setTimeout(() => setSubmitted(false), 3000);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault(); // prevenir comportamento padrão antes de ler os dados
+
+    if (submitting) return; // evita envios duplos
+    setSubmitting(true);
+    setError(null);
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    // FormData.get pode retornar null, então convertendo para string segura
+    const name = String(formData.get("name") ?? "");
+    const email = String(formData.get("email") ?? "");
+    const project = String(formData.get("project") ?? "");
+    const message = String(formData.get("message") ?? "");
+
+    try {
+      await sendEmail(name, email, project, message);
+      setSubmitted(true);
+      // opcional: limpar form se desejar
+      form.reset();
+      // Reset do estado de "mensagem enviada" depois de 3s (como tinha antes)
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (err: any) {
+      console.error("Erro ao enviar email:", err);
+      setError("Erro ao enviar. Tente novamente mais tarde.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -102,7 +129,7 @@ export function Contact() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                   <div className="space-y-2">
                     <label
                       htmlFor="name"
@@ -112,6 +139,7 @@ export function Contact() {
                     </label>
                     <Input
                       id="name"
+                      name="name"
                       placeholder="Seu nome"
                       required
                       className="bg-secondary border-border"
@@ -126,6 +154,7 @@ export function Contact() {
                     </label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="seu@email.com"
                       required
@@ -141,6 +170,7 @@ export function Contact() {
                     </label>
                     <Input
                       id="project"
+                      name="project"
                       placeholder="Ex: Sistema de gestão, Landing page..."
                       className="bg-secondary border-border"
                     />
@@ -154,17 +184,22 @@ export function Contact() {
                     </label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Descreva seu projeto ou como posso ajudar..."
                       rows={4}
                       required
                       className="bg-secondary border-border resize-none"
                     />
                   </div>
+
+                  {error && <p className="text-sm text-red-500">{error}</p>}
+
                   <Button
                     type="submit"
+                    disabled={submitting}
                     className="w-full bg-primary hover:bg-primary/90"
                   >
-                    Enviar mensagem
+                    {submitting ? "Enviando..." : "Enviar mensagem"}
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </form>

@@ -128,7 +128,7 @@ export function Hero() {
               </div>
               <pre className="text-muted-foreground">
                 <code>
-                  {`const developer = {
+                  {`const constant = {
   name: "João Pedro Constant",
   role: "Full Stack Developer",
   focus: [
