@@ -12,7 +12,7 @@ const highlights = [
   },
   {
     icon: Zap,
-    title: "Frontend Premium",
+    title: "Frontend Moderno",
     description:
       "Sites institucionais e landing pages com design moderno e foco em conversão.",
   },
@@ -44,9 +44,9 @@ export function About() {
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
             Sou desenvolvedor Full Stack com paixão por criar sistemas que
-            simplificam o cotidiano. Minha abordagem combina excelência técnica
-            com visão de negócio, entregando projetos que não apenas funcionam,
-            mas que impulsionam resultados.
+            simplificam o cotidiano. Minha abordagem combina habilidades técnicas com visão
+            de negócio, entregando projetos que não apenas funcionam, mas que
+            impulsionam resultados.
           </p>
         </FadeInUp>
 

@@ -17,7 +17,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="py-2 px-4 bg-primary/10 rounded-full w-fit flex items-center gap-2"
             >
-              <div className="w-2 h-2 rounded-full bg-green-400" />
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <p className="text-primary font-mono text-sm tracking-wider">
                 Disponível para novos projetos
               </p>
@@ -116,7 +116,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="hidden lg:flex justify-center items-center"
+          className="flex justify-center items-center"
         >
           <div className="relative">
             {/* Code Block Visual */}
