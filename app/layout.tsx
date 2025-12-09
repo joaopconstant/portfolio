@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "João Pedro Constant | Full Stack Developer",
+  title: "Constant - Full Stack Developer",
   description:
     "Desenvolvedor Full Stack especializado em TypeScript, Next.js, React e Node.js. Criando soluções digitais para o dia a dia convencional e empresarial.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "João Pedro Constant" }],
   openGraph: {
-    title: "João Pedro Constant | Full Stack Developer",
+    title: "Constant - Full Stack Developer",
     description:
       "Desenvolvedor Full Stack especializado em TypeScript, Next.js, React e Node.js.",
     type: "website",
