@@ -1,49 +1,49 @@
 "use client";
 
 import type React from "react";
+import { GrMysql } from "react-icons/gr";
+import { GoDatabase } from "react-icons/go";
+import { FadeInUp, StaggerContainer, StaggerItem } from "@/components/motion";
 import {
   SiTypescript,
   SiReact,
   SiNextdotjs,
   SiRedux,
-  SiTailwindcss,
   SiNodedotjs,
   SiExpress,
   SiPostgresql,
-  SiMysql,
   SiMongodb,
   SiMariadb,
   SiGit,
   SiGithub,
   SiVercel,
   SiVite,
+  SiDigitalocean,
 } from "react-icons/si";
-import { Database } from "lucide-react";
-import { FadeInUp, StaggerContainer, StaggerItem } from "@/components/motion";
 
 const technologies = {
   frontend: [
-    { name: "TypeScript", icon: SiTypescript },
     { name: "React", icon: SiReact },
     { name: "Next.js", icon: SiNextdotjs },
     { name: "Vite", icon: SiVite },
     { name: "Redux", icon: SiRedux },
-    { name: "Tailwind CSS", icon: SiTailwindcss },
   ],
   backend: [
+    { name: "TypeScript", icon: SiTypescript },
     { name: "Node.js", icon: SiNodedotjs },
     { name: "Express", icon: SiExpress },
-    { name: "REST APIs", icon: Database },
+    { name: "REST APIs", icon: GoDatabase },
   ],
   database: [
     { name: "PostgreSQL", icon: SiPostgresql },
-    { name: "MySQL", icon: SiMysql },
+    { name: "MySQL", icon: GrMysql },
     { name: "MongoDB", icon: SiMongodb },
     { name: "MariaDB", icon: SiMariadb },
   ],
-  tools: [
+  dev: [
     { name: "Git", icon: SiGit },
     { name: "GitHub", icon: SiGithub },
+    { name: "DigitalOcean", icon: SiDigitalocean },
     { name: "Vercel", icon: SiVercel },
   ],
 };
@@ -111,7 +111,7 @@ export function TechStack() {
           {/* Database */}
           <StaggerItem className="space-y-4">
             <h3 className="text-foreground font-semibold text-lg border-b border-border pb-2">
-              Banco de Dados
+              Databases
             </h3>
             <div className="flex flex-col gap-2">
               {technologies.database.map((tech) => (
@@ -123,10 +123,10 @@ export function TechStack() {
           {/* Tools */}
           <StaggerItem className="space-y-4">
             <h3 className="text-foreground font-semibold text-lg border-b border-border pb-2">
-              Ferramentas
+              Dev & Cloud
             </h3>
             <div className="flex flex-col gap-2">
-              {technologies.tools.map((tech) => (
+              {technologies.dev.map((tech) => (
                 <TechItem key={tech.name} {...tech} />
               ))}
             </div>
