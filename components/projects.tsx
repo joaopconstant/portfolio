@@ -5,13 +5,13 @@ import { FadeInUp, StaggerContainer, StaggerItem } from "@/components/motion";
 
 const projects = [
   {
-    title: "Spendash",
+    title: "Budget Manager",
     description:
       "Sistema de gestão de gastos pessoais, com controle de gastos e receitas, e relatórios de gastos.",
     tags: ["Next.js", "Tailwind", "Vercel"],
-    image: "/spendash-app.png",
-    link: "https://spendash-omega.vercel.app",
-    github: null,
+    image: "/budget-manager.png",
+    link: "budget-manager-coral.vercel.app",
+    github: "https://github.com/joaopconstant/budget_manager",
   },
   {
     title: "MRX Rodas e Rodízios",
